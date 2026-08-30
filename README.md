@@ -1,6 +1,7 @@
 ## Micaela Creo — Analytics and Research Portfolio
 
 ### Source for my portfolio site, live at [mica-creo.github.io/micaelas-portfolio/](mica-creo.github.io/micaelas-portfolio/).
+If link doesn't work, paste into browser
 
 I'm an MSBA candidate at Wake Forest University with a background in economics and sociology. The site collects my econometric and statistical work, my research assistantship, and my resume.
 
