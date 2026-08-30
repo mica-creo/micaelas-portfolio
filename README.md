@@ -1,58 +1,28 @@
-# Micaela Creo — Portfolio Site
+## Micaela Creo — Analytics and Research Portfolio
 
-A static, single-page portfolio (HTML/CSS/JS, no build step, no framework) — free to host on GitHub Pages with no upload limits.
+### Source for my portfolio site, live at mica-creo.github.io/micaelas-portfolio.
 
-## What's on the site
+I'm an MSBA candidate at Wake Forest University with a background in economics and sociology. The site collects my econometric and statistical work, my research assistantship, and my resume.
 
-- **Hero / About Me** — headshot, tagline, bio, and quick links (location, email, LinkedIn, resume)
-- **Video intro** — link out to a short "get to know me" video
-- **Education Highlights** — Wake Forest MSBA + BA, honors, awards, and press mentions (Phi Beta Kappa, GradTab feature)
-- **Analytical Projects** (filterable by tag) —
-  - *Research Assistantship*: data cleaning & visualization for a Wake Forest Economics research project on student mobility in Lima, Peru
-  - *Difference-in-Differences Model*: senior econometrics project evaluating NY's Excelsior Scholarship
-  - *Multiple Regression Model*: MSBA team project modeling Spotify track popularity in Excel & Python
-- **Resume** — live embedded preview + download link (Google Drive)
-- **Skills & Contact** — technical skills pulled from your resume, plus email/LinkedIn
+### Featured projects
 
-Everything is built out — no placeholder or "coming soon" sections remain.
+NY Excelsior Scholarship: A Difference-in-Differences Policy Analysis Difference-in-differences model in Stata testing whether New York's last-dollar tuition scholarship increased bachelor's degree completion, using IPUMS CPS microdata (2015–2024, 53,001 observations). Pennsylvania serves as the control state. The treatment effect was statistically insignificant, and I report the null result as the finding.
 
-## Design notes
+Spotify Track Popularity: A Multiple Regression Analysis Team project modeling a 0–100 popularity score against audio features in Excel and Python. Seven candidate specifications compared on adjusted R², multicollinearity diagnosed through a full correlation matrix, and every coefficient held to α = 0.01 given the sample size. Traced a large cluster of zero-popularity records to duplicate catalog uploads before modeling.
 
-- **Fonts:** EB Garamond (headings), Literata (body) — loaded from Google Fonts
-- **Palette:** gold (Wake Forest / education only), cream (page background), pink, sage, coral — defined as CSS variables at the top of `style.css` if you ever want to retheme
-- **Interactions:** sticky nav with smooth scroll, scroll-reveal on sections, hover-grow on buttons/pills, hover-preview thumbnails on a few inline links, project filter pills
+Student Mobility and Academic Performance (Peru) Research assistantship with Dr. Alba-Vivar in the Wake Forest Department of Economics. Built an original geo-referenced dataset of Lima transportation strikes (1,101 observations, 11 variables) through archival research and event coding of Spanish-language sources, visualized in Stata.
 
-## Local preview
+### About this repository
 
-Just open `index.html` in a browser — no server needed.
+Static single-page site. HTML, CSS, and vanilla JavaScript with no framework and no build step, deployed on GitHub Pages.
 
-## Deploy to GitHub Pages
+index.html    markup and all page content
+style.css     styling; color and type variables are defined at the top
+script.js     sticky nav, scroll reveal, project filter pills
+assets/       images and resume PDF
 
-1. Create a new repository on GitHub (e.g. `micaela-portfolio`).
-2. Upload these files (`index.html`, `style.css`, `script.js`, `assets/`) to the repo — either drag-and-drop via the GitHub web UI ("Add file" → "Upload files") or via git:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-3. In the repo, go to **Settings → Pages**.
-4. Under "Build and deployment", set **Source** to "Deploy from a branch", branch `main`, folder `/ (root)`.
-5. Save. Your site will be live in a minute or two at `https://<your-username>.github.io/<repo-name>/`.
+Typeset in EB Garamond and Literata via Google Fonts.
 
-(Full beginner-friendly, no-command-line version of these steps is in `DEPLOY-GUIDE.md`.)
+### Contact
 
-## Updating content later
-
-Once live, edit any file directly in the GitHub web UI (pencil icon → edit → commit) and the site rebuilds automatically within a minute or two. See `DEPLOY-GUIDE.md` for the no-code walkthrough.
-
-## About the `assets/` folder
-
-Only the compressed images are actually referenced in `index.html` (mostly the `-sm` / `-table` files). A few original, uncompressed source images and PDF-render intermediates are still sitting in the folder from when they were built — you can delete these before your final upload to keep the repo lean, or just leave them (GitHub Pages won't serve anything that isn't linked from the HTML, so they're harmless either way):
-
-- `headshot.jpg` (→ using `headshot-sm.jpg` instead)
-- `research_1.png`, `research_2.png`, `research-poster.png` (→ using the `-sm.jpg` versions)
-- `alba-vivar-sm.jpg` (unused — replaced by `alba-vivar-team-sm.jpg`)
-- `did-page11-11.png`, `did-regression-crop.png` (intermediate crops → final is `did-regression-table.jpg`)
+creoma22@wfu.edu · LinkedIn
