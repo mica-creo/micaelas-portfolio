@@ -127,8 +127,8 @@
     <button class="pill active" data-filter="all">All</button>
     <button class="pill" data-filter="ml">ECG-Matching Siamese Network</button>
     <button class="pill" data-filter="research">Economics Research Assistant</button>
-    <button class="pill" data-filter="class">Difference-in-Difference Model</button>
-    <button class="pill" data-filter="regression">Spotify Linear Regression Model</button>
+    <button class="pill" data-filter="class">Difference-in-Difference</button>
+    <button class="pill" data-filter="regression">Spotify Linear Regression</button>
   </div>
 
   <!-- ECG PATIENT MATCHING -->
@@ -140,15 +140,15 @@
     <div class="psa-grid">
       <div class="psa-card">
         <div class="psa-label">Context</div>
-        <p>At the 2026 Wake Forest School of Medicine ECG-AI Build-a-Thon (hosted by the Akbilgic ECG-AI Lab), our team had three weeks to build a model that takes two Lead I ECGs (250 Hz, up to 10 seconds) and returns a single similarity score for whether they came from the same patient. Submissions were graded by AUROC on a hidden set of 1,000 pairs mixing hospital and Apple Watch recordings. We placed 2nd.</p>
+        <p>At the 2026 Wake Forest School of Medicine ECG-AI Build-a-Thon (hosted by Center for Artificial Intelligence Research), our team had three weeks to build a model that takes two Lead I ECGs (250 Hz, up to 10 seconds) and returns a single similarity score for whether they came from the same patient. Submissions were graded by AUROC on a hidden set of 1,000 pairs mixing hospital and Apple Watch recordings. Our team placed 2nd!</p>
       </div>
       <div class="psa-card">
         <div class="psa-label">My Role</div>
-        <p>Built with a team of 3: Amber Rodenbo, Ph.D. led model development and scaling of a Siamese 1-D convolutional network (~93,600 parameters) trained on MIMIC-IV-ECG and SJLIFE data, with patient-level splits made before pairing to prevent leakage. I focused on reproducibility and reliability. I retrained the early model across 10 random seeds and separated the data seed from the training seed, showing that a reported 0.85 averaged 0.80 (SD 0.09). After that, the team reported averages instead of best runs. I raised the audit question that led us to test the final model on Apple Watch data. I also hardened the submission's inference code: short recordings are repeated rather than zero-padded (AUROC held at ~0.92 with 4-second inputs), missing values are interpolated, flat ECGs return a score instead of crashing, and pairs can be scored in batches. Finally, I verified the submission package end to end (model checksum, exact reproduction of the 0.9221 result) and wrote the README usage section and experiment log entries.</p>
+        <p>Built with a team of 3: Developed and scaled a Siamese 1-D convolutional network (~93,600 parameters) trained on MIMIC-IV-ECG and SJLIFE data, with patient-level splits made before pairing to prevent leakage. I focused on reproducibility and reliability. I retrained an early model across 10 random seeds and separated the data seed from the training seed, showing that a reported 0.85 averaged 0.80 in reality (SD 0.09). Reporting averages allowed for measuring stable improvements. I ensured our final model ran on combinations of an Apple Watch and Clinical recording, and chose to repeat short recordings rather than pad zeroes (AUROC held at ~0.92 with 4-second inputs), missing values were interpolated, flat ECGs returned a score instead of crashing, and pairs could be scored in batches. Finally, I verified the exact reproduction of the 0.9221 result.</p>
       </div>
       <div class="psa-card">
         <div class="psa-label">Outcome</div>
-        <p>On unseen validation patients, the model reached 0.9747 AUROC for hospital-to-hospital matching (1,500 pairs) and 0.9221 for hospital-to-Apple Watch matching (36 patients), with no retraining on Apple Watch data. A simple non-ML heartbeat-shape baseline scored 0.789. AUROC isn't accuracy: 0.97 means a true match outranks a non-match about 97% of the time. These are validation results, since the hidden test scores weren't released to us. The model is a research prototype, not a medical device. My main takeaway: one run is one draw, so report distributions and test what you'll actually ship.</p>
+        <p>On unseen validation patients, the model reached 0.9747 AUROC for hospital-to-hospital matching (1,500 pairs) and 0.9221 for hospital-to-Apple Watch matching (36 patients), with no retraining on Apple Watch data. A simple non-ML heartbeat-shape baseline scored 0.789. 0.97 AUROC means a true match outranks a non-match about 97% of the time on validation results. We used our model to develop a working web prototype where a user inputs two ECG recordings and the Siamese model returns a similarity score, as seen below.</p>
       </div>
     </div>
 
