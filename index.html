@@ -37,27 +37,19 @@
         <div>✉️ <a href="mailto:creoma22@wfu.edu">creoma22@wfu.edu</a></div>
         <div>🔗 <a href="https://www.linkedin.com/in/micaela-creo-9766a9268/" target="_blank" rel="noopener">LinkedIn</a></div>
       </div>
-      <a class="resume-btn" href="assets/Micaela_Creo_Resume.pdf" target="_blank" rel="noopener">📄 View my resume</a>
+      <a class="resume-btn" href="https://drive.google.com/file/d/1WmHheZR5WpDYzryVzxVVawSh9KjDfaHu/view?usp=sharing" target="_blank" rel="noopener">📄 View my resume</a>
     </div>
 
     <div id="about" class="about-callout reveal">
       <h1>Micaela Creo</h1>
       <div class="tagline">About Me</div>
-      <p>I'm a first-generation student pursuing a Master's in Business Analytics at Wake Forest University, following a B.A. in Economics and Sociology that I completed despite the heavy time commitments as a college cheerleader (3.94 GPA, Magna Cum Laude).</p>
-      <p>My professional and academic background seamlessly blends quantitative and qualitative research. My projects and research assistantship allow me to answer technically complex problems through statistical and econometric modeling in Python, Excel, Stata, Java, or R — yet never without asking the right questions to think critically and decipher sociological context.</p>
-      <p>I believe language is our greatest gift! I'm a native Spanish speaker, proficient in Italian, with excellent English communication skills. I'm a writer, a cheerleader, and a musician, all of which embed themselves into my professional skillset. I represented a team of 20 iHeartMedia interns in a 30-minute project presentation to a room full of executive and senior VPs — after which my supervisor assured me I'd "be in front of a camera one day."</p>
+      <p>I'm a first-generation student pursuing a Master's in Business Analytics at Wake Forest University after graduating Magna Cum Laude with a B.A. in Economics and Sociology, while balancing long practices and gamedays on the cheerleading team!</p>
+      <p>My professional and academic background seamlessly blends quantitative and qualitative research. My projects and research assistantship allow me to answer technically complex problems through statistical modeling and database querying in Python, Excel, Stata, Java, and SQL. My business and social science blend leads me to ask critical questions and decipher sociological context.</p>
+      <p>I believe language is our greatest gift! I'm a native Spanish speaker, proficient in Italian, with excellent English communication skills. My interests in writing and music embed themselves into my professional skillset. I represented a team of 20 iHeartMedia interns in a 30-minute project presentation to a room full of executive and senior VPs.</p>
       <p>I'm enthusiastic about exploring roles in analytics and consulting to employ my quick learning, creativity, attention to detail, and strategic thinking.</p>
     </div>
   </div>
 
-  <div class="video-block reveal">
-    <div class="poster-btn-wrap">
-      <a class="poster-btn" href="https://youtu.be/tv0DeRe7hzU" target="_blank" rel="noopener">
-        <svg class="yt-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FF0000"></rect><path d="M10 8l6 4-6 4V8z" fill="#fff"></path></svg>
-        Video: get to know me better!
-      </a>
-    </div>
-  </div>
 </header>
 
 <section id="education" class="page-section container reveal">
@@ -125,35 +117,34 @@
 
   <div class="filter-pills" role="group" aria-label="Filter projects by category">
     <button class="pill active" data-filter="all">All</button>
-    <button class="pill" data-filter="ml">Machine Learning</button>
-    <button class="pill" data-filter="research">Research</button>
-    <button class="pill" data-filter="class">Difference-in-Difference Model</button>
-    <button class="pill" data-filter="regression">Multiple Regression Model</button>
+    <button class="pill" data-filter="ml">ECG-Matching Siamese Network</button>
+    <button class="pill" data-filter="research">Economics Research Assistant</button>
+    <button class="pill" data-filter="class">Difference-in-Difference</button>
+    <button class="pill" data-filter="regression">Spotify Linear Regression</button>
   </div>
 
   <!-- ECG PATIENT MATCHING -->
   <div class="project-featured proj-card" data-category="ml">
     <span class="project-tag" style="background:var(--blue-text);">Machine Learning · 2nd Place</span>
     <h3>ECG Patient Matching: A Siamese Neural Network Across Hospital and Apple Watch Recordings</h3>
-    <div class="proj-sub">2026 Wake Forest ECG-AI Build-a-Thon · Built with a team of 3 · Python, TensorFlow/Keras</div>
+    <div class="proj-sub">2026 Wake Forest ECG-AI Build-a-Thon · Team "ECGals" (3-person team) · Python, TensorFlow/Keras</div>
 
     <div class="psa-grid">
       <div class="psa-card">
         <div class="psa-label">Context</div>
-        <p>In three weeks, we built a model that takes two Lead I ECGs and scores whether they came from the same patient, across hospital machines and Apple Watches. Entries were graded by AUROC on a hidden set of 1,000 pairs.</p>
+        <p>At the 2026 Wake Forest School of Medicine ECG-AI Build-a-Thon (hosted by Center for Artificial Intelligence Research), our team had three weeks to build a model that takes two Lead I ECGs (250 Hz, up to 10 seconds) and returns a single similarity score for whether they came from the same patient. Submissions were graded by AUROC on a hidden set of 1,000 pairs mixing hospital and Apple Watch recordings. Our team placed 2nd!</p>
       </div>
       <div class="psa-card">
         <div class="psa-label">My Role</div>
-        <p>The team built a Siamese 1-D neural network; I owned reproducibility and reliability. I retrained the early model across 10 seeds, showing a reported 0.85 averaged 0.80, so the team reported averages instead of best runs. I raised the question that led us to test on Apple Watch data, made the submission code robust to short, missing, and flat recordings, and verified the final package end to end.</p>
+        <p>Built with a team of 3: Developed and scaled a Siamese 1-D convolutional network (~93,600 parameters) trained on MIMIC-IV-ECG and SJLIFE data, with patient-level splits made before pairing to prevent leakage. I focused on reproducibility and reliability. I retrained an early model across 10 random seeds and separated the data seed from the training seed, showing that a reported 0.85 averaged 0.80 in reality (SD 0.09). Reporting averages allowed for measuring stable improvements. I ensured our final model ran on combinations of an Apple Watch and Clinical recording, and chose to repeat short recordings rather than pad zeroes (AUROC held at ~0.92 with 4-second inputs), missing values were interpolated, flat ECGs returned a score instead of crashing, and pairs could be scored in batches. Finally, I verified the exact reproduction of the 0.9221 result.</p>
       </div>
       <div class="psa-card">
         <div class="psa-label">Outcome</div>
-        <p>On unseen validation patients: 0.9747 AUROC hospital-to-hospital and 0.9221 hospital-to-Apple Watch with no Apple Watch retraining, versus 0.789 for a non-ML baseline. Hidden test scores weren't released. Research prototype, not a medical device.</p>
+        <p>On unseen validation patients, the model reached 0.9747 AUROC for hospital-to-hospital matching (1,500 pairs) and 0.9221 for hospital-to-Apple Watch matching (36 patients), with no retraining on Apple Watch data. A simple non-ML heartbeat-shape baseline scored 0.789. 0.97 AUROC means a true match outranks a non-match about 97% of the time on validation results. We used our model to develop a working web prototype where a user inputs two ECG recordings and the Siamese model returns a similarity score, as seen below.</p>
       </div>
     </div>
 
-    <div class="proj-images">
-      <img src="assets/ecg-title-slide.jpg" alt="ECGals title slide: Patient matching Lead I ECGs across clinical and wearable recordings using a Siamese network, 2026 ECG-AI Build-a-Thon">
+    <div class="proj-images proj-images--single">
       <img src="assets/ecg-matching-demo.jpg" alt="Prototype interface comparing two uploaded Lead I ECGs and returning a similarity score">
     </div>
 
@@ -266,9 +257,9 @@
   <h2 class="section-title">Resume</h2>
   <div class="resume-preview-card">
     <div class="resume-frame">
-      <iframe src="assets/Micaela_Creo_Resume.pdf#view=FitH" title="Micaela Creo — Resume Preview"></iframe>
+      <iframe src="https://drive.google.com/file/d/1WmHheZR5WpDYzryVzxVVawSh9KjDfaHu/preview" title="Micaela Creo — Resume Preview" allow="autoplay"></iframe>
     </div>
-    <a class="resume-btn" style="width:auto; display:inline-block; margin-top:16px;" href="assets/Micaela_Creo_Resume.pdf" target="_blank" rel="noopener">📄 View / download resume (PDF)</a>
+    <a class="resume-btn" style="width:auto; display:inline-block; margin-top:16px;" href="https://drive.google.com/file/d/1WmHheZR5WpDYzryVzxVVawSh9KjDfaHu/view?usp=sharing" target="_blank" rel="noopener">📄 View / download resume (PDF)</a>
   </div>
 </section>
 
@@ -277,38 +268,42 @@
   <h2 class="section-title">Skills &amp; Contact</h2>
   <div class="skills-grid">
     <div class="skill-group">
-      <div class="skill-group-label">Programming &amp; Databases</div>
+      <div class="skill-group-label">Programming Languages</div>
       <div class="skill-tags">
-        <span class="skill-tag">Python (pandas, NumPy, Matplotlib, scikit-learn)</span>
-        <span class="skill-tag">SQL (PostgreSQL)</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
         <span class="skill-tag">Stata</span>
-        <span class="skill-tag">Git/GitHub</span>
+        <span class="skill-tag">Java</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Research Methods</div>
       <div class="skill-tags">
-        <span class="skill-tag">Causal Inference (DiD)</span>
-        <span class="skill-tag">Linear/Logistic Regression</span>
-        <span class="skill-tag">Model Diagnostics</span>
-        <span class="skill-tag">Data Cleaning</span>
-        <span class="skill-tag">Geo-Referenced Datasets</span>
+        <span class="skill-tag">Difference-in-Differences (DiD)</span>
+        <span class="skill-tag">Econometric Methods</span>
+        <span class="skill-tag">Data Cleaning (Python, Stata, Excel)</span>
+        <span class="skill-tag">Geo-Referenced Dataset Construction</span>
+        <span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">Choropleth Mapping (Stata)</span>
+        <span class="skill-tag">Archival Research &amp; Event Coding</span>
       </div>
     </div>
     <div class="skill-group">
-      <div class="skill-group-label">Tools</div>
+      <div class="skill-group-label">Data Analysis &amp; Design</div>
       <div class="skill-tags">
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Microsoft Suite (Excel)</span>
-        <span class="skill-tag">Google Suite</span>
-        <span class="skill-tag">Adobe Creative Suite</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Adobe Suite</span>
+        <span class="skill-tag">Photoshop &amp; After Effects</span>
         <span class="skill-tag">Canva</span>
+        <span class="skill-tag">CRM</span>
+        <span class="skill-tag">Google Suite</span>
+        <span class="skill-tag">Microsoft Suite</span>
       </div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Foreign Languages</div>
       <div class="skill-tags">
-        <span class="skill-tag">Native Spanish</span>
+        <span class="skill-tag">Native Spanish (academic/legislative translation)</span>
         <span class="skill-tag">Proficient Italian</span>
       </div>
     </div>
